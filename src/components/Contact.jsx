@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import './Contact.css';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCopy, FaCheck } from 'react-icons/fa';
 
-const EMAIL = 'contact@himalthapa.tech';
+const EMAIL = 'himalthapa00001234@gmail.com';
 
 const links = [
-    { label: 'GitHub', sub: 'github.com/himal-thapa', icon: <FaGithub />, href: 'https://github.com/himal-thapa', accent: '#E6EDF3' },
-    { label: 'LinkedIn', sub: 'linkedin.com/in/himal-thapa', icon: <FaLinkedin />, href: 'https://linkedin.com/in/himal-thapa', accent: '#0A66C2' },
+    { label: 'GitHub', sub: 'github.com/001himal', icon: <FaGithub />, href: 'https://github.com/001himal', accent: '#E6EDF3' },
+    { label: 'LinkedIn', sub: 'linkedin.com/in/himal-thapa-7a2998359', icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/himal-thapa-7a2998359/', accent: '#0A66C2' },
     { label: 'Email', sub: EMAIL, icon: <FaEnvelope />, href: `mailto:${EMAIL}`, accent: '#00F5D4' },
 ];
 
