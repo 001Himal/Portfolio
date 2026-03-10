@@ -1,0 +1,110 @@
+.contact-wrap {}
+
+.contact-intro {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 560px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.3rem;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.contact-link:hover {
+    border-left-color: var(--cl, var(--accent));
+    background: var(--glass-hover);
+}
+
+.cl-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.cl-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.cl-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.cl-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.cl-arrow {
+    color: var(--text-muted);
+    font-size: 1rem;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.contact-link:hover .cl-arrow {
+    transform: translateX(4px);
+    color: var(--cl, var(--accent));
+}
+
+/* Email copy row */
+.email-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1.2rem;
+    flex-wrap: wrap;
+}
+
+.email-code {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 0.88rem;
+    flex: 1;
+}
+
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--glass);
+    color: var(--text-muted);
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    color: var(--text);
+    border-color: var(--text-muted);
+}
+
+.copy-btn.copied {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(0, 245, 212, 0.07);
+}

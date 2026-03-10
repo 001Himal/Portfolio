@@ -1,0 +1,306 @@
+/* =============================================
+   SPLIT LAYOUT — FAANG two-column pattern
+   Left: sticky, Right: scrollable
+   ============================================= */
+
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 4rem;
+}
+
+/* ───── LEFT PANEL ───── */
+.left-panel {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 340px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background blobs inside left panel */
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    transition: transform 0.15s ease-out;
+    pointer-events: none;
+}
+
+.blob-a {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(0, 245, 212, 0.14) 0%, transparent 70%);
+    top: -60px;
+    right: -80px;
+}
+
+.blob-b {
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(123, 97, 255, 0.16) 0%, transparent 70%);
+    bottom: 40px;
+    left: -60px;
+}
+
+.left-inner {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    width: 100%;
+}
+
+/* Identity block */
+.hero-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 245, 212, 0.07);
+    border: 1px solid rgba(0, 245, 212, 0.2);
+    border-radius: 40px;
+    padding: 0.35rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent);
+    width: fit-content;
+    letter-spacing: 0.02em;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 245, 212, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(0, 245, 212, 0);
+    }
+}
+
+.hero-name {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.hero-role-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    height: 1.8rem;
+    overflow: hidden;
+}
+
+.role-dash {
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.hero-role-text {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.hero-tagline {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    border-left: 2px solid var(--secondary);
+    padding-left: 1rem;
+}
+
+/* Navigation */
+.left-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.left-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color var(--t-fast);
+}
+
+.nav-line {
+    display: block;
+    height: 1px;
+    width: 28px;
+    background: var(--text-muted);
+    transition: width var(--t-norm), background var(--t-norm);
+    flex-shrink: 0;
+}
+
+.left-nav-item:hover {
+    color: var(--text);
+}
+
+.left-nav-item:hover .nav-line {
+    width: 56px;
+    background: var(--text);
+}
+
+.left-nav-item.active {
+    color: var(--accent);
+}
+
+.left-nav-item.active .nav-line {
+    width: 56px;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+}
+
+/* Socials */
+.left-socials {
+    display: flex;
+    gap: 1.2rem;
+    color: var(--text-muted);
+}
+
+.left-socials a {
+    display: flex;
+    align-items: center;
+    transition: color var(--t-fast), transform var(--t-fast);
+}
+
+.left-socials a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* ───── RIGHT PANEL ───── */
+.right-panel {
+    flex: 1;
+    min-width: 0;
+    padding: 6rem 0 4rem;
+}
+
+.right-section {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.right-section:last-of-type {
+    border-bottom: none;
+}
+
+/* Override inner section padding so right panel owns spacing */
+.right-section .section {
+    padding: 0;
+}
+
+/* Footer inside right */
+.right-footer {
+    padding: 3rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.right-footer p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.footer-stack {
+    font-size: 0.75rem;
+    color: rgba(139, 154, 187, 0.5);
+}
+
+/* ───── RESPONSIVE ───── */
+@media (max-width: 1024px) {
+    .split-layout {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 1.5rem;
+    }
+
+    .left-panel {
+        position: relative;
+        height: auto;
+        width: 100%;
+        padding-top: 6rem;
+    }
+
+    .left-inner {
+        padding: 2rem 0;
+        gap: 2.5rem;
+    }
+
+    .left-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .left-nav-item {
+        background: var(--glass);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.3rem 0.8rem;
+        gap: 0;
+        font-size: 0.72rem;
+    }
+
+    .nav-line {
+        display: none;
+    }
+
+    .right-panel {
+        padding: 2rem 0;
+    }
+
+    .right-section {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .split-layout {
+        padding: 0 1rem;
+    }
+
+    .blob-a,
+    .blob-b {
+        width: 160px;
+        height: 160px;
+    }
+}

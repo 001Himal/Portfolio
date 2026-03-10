@@ -1,0 +1,137 @@
+.terminal-trigger {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.15);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.terminal-trigger:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(0, 245, 212, 0.35);
+}
+
+.terminal-window {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 2rem;
+    width: min(480px, calc(100vw - 2rem));
+    z-index: 901;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #0d1117;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 1rem;
+    background: #161b22;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-label {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.terminal-x {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    transition: color 0.2s;
+}
+
+.terminal-x:hover {
+    color: var(--text);
+}
+
+.terminal-body {
+    padding: 1rem;
+    min-height: 180px;
+    max-height: 280px;
+    overflow-y: auto;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+}
+
+.terminal-line p {
+    margin: 0;
+    padding: 0;
+}
+
+.terminal-line.info {
+    color: var(--text-muted);
+}
+
+.terminal-line.input {
+    color: var(--text);
+}
+
+.terminal-line.output {
+    color: var(--accent);
+    margin: 0.3rem 0;
+    white-space: pre-line;
+}
+
+.terminal-line.error {
+    color: #ff5f57;
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: #0d1117;
+}
+
+.terminal-prompt {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.terminal-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.82rem;
+    outline: none;
+    caret-color: var(--accent);
+}
