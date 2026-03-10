@@ -27,32 +27,66 @@
 /* ──────────────────────────────
    About section
    ────────────────────────────── */
-.about-wrap {}
+/* About section */
 
 .about-body {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 2rem;
 }
 
-.about-body p {
-    font-size: 1rem;
+.about-intro {
+    font-size: 1.05rem;
     color: var(--text-muted);
-    line-height: 1.85;
+    line-height: 1.7;
+    max-width: 420px;
 }
 
-.about-body strong {
+.about-intro strong {
     color: var(--text);
     font-weight: 600;
 }
 
-.about-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.8rem;
+/* Specialty cards */
+.about-area-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
 }
 
+.about-area-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem 1.1rem;
+    cursor: default;
+    transition: border-color 0.2s;
+}
+
+.about-area-card:hover {
+    border-color: rgba(0, 245, 212, 0.3);
+}
+
+.area-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    margin-bottom: 0.15rem;
+}
+
+.area-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.area-items {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* Tag chips (kept for other uses) */
 .tag {
     display: inline-block;
     font-size: 0.76rem;
@@ -64,11 +98,11 @@
     padding: 0.25rem 0.6rem;
 }
 
+/* Stats */
 .stat-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--border);
 }
@@ -93,5 +127,9 @@
 @media (max-width: 500px) {
     .stat-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-area-grid {
+        grid-template-columns: 1fr;
     }
 }

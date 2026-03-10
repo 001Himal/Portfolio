@@ -17,7 +17,7 @@ const navItems = [
     { id: 'contact', label: 'Contact' },
 ];
 
-const roles = ['Computer Engineer', 'DevOps Learner', 'Cloud Builder', 'SaaS Creator'];
+const roles = ['Software Engineer', 'Cloud Architect', 'DevOps Engineer', 'System Designer'];
 
 const LeftPanel = ({ activeSection }) => {
     const [roleIdx, setRoleIdx] = useState(0);
@@ -80,8 +80,8 @@ const LeftPanel = ({ activeSection }) => {
                     </div>
 
                     <p className="hero-tagline">
-                        I build cloud tools, developer platforms,<br />
-                        and experimental products.
+                        Building cloud tools, developer platforms,<br />
+                        and things that actually ship.
                     </p>
                 </motion.div>
 
@@ -103,6 +103,17 @@ const LeftPanel = ({ activeSection }) => {
                         </a>
                     ))}
                 </motion.nav>
+
+                {/* Currently building status */}
+                <motion.div
+                    className="currently-building"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                    <span className="building-dot" />
+                    <span>Building: <span className="gradient-text">ToolHub</span></span>
+                </motion.div>
 
                 {/* Social links */}
                 <motion.div
@@ -151,11 +162,11 @@ const SplitLayout = () => {
                 <section id="about" className="right-section">
                     <About />
                 </section>
-                <section id="timeline" className="right-section">
-                    <Timeline />
-                </section>
                 <section id="projects" className="right-section">
                     <Projects />
+                </section>
+                <section id="timeline" className="right-section">
+                    <Timeline />
                 </section>
                 <section id="skills" className="right-section">
                     <Skills />
@@ -164,8 +175,8 @@ const SplitLayout = () => {
                     <Contact />
                 </section>
                 <footer className="right-footer">
-                    <p>Built by <span className="gradient-text">Himal Thapa</span> &mdash; Designed with passion &copy; {new Date().getFullYear()}</p>
-                    <p className="footer-stack">React · Framer Motion · Vite · himalthapa.tech</p>
+                    <p>Built by <span className="gradient-text">Himal Thapa</span> &copy; {new Date().getFullYear()}</p>
+                    <p className="footer-stack">React · Framer Motion · Vite</p>
                 </footer>
             </main>
         </div>

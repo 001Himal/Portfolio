@@ -1,6 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import { FaDocker, FaAws, FaGitAlt } from 'react-icons/fa';
+import { SiPostgresql } from 'react-icons/si';
+
+const areas = [
+    {
+        icon: '⚡',
+        title: 'DevOps',
+        items: 'Docker · CI/CD · Linux',
+    },
+    {
+        icon: '☁️',
+        title: 'Cloud',
+        items: 'AWS · Cloudflare · Supabase',
+    },
+    {
+        icon: '🛠',
+        title: 'Engineering',
+        items: 'React · Python · PostgreSQL',
+    },
+    {
+        icon: '📐',
+        title: 'Design',
+        items: 'System Design · Architecture',
+    },
+];
 
 const About = () => (
     <div className="about-wrap">
@@ -10,33 +35,33 @@ const About = () => (
         </div>
 
         <div className="about-body">
-            <p>
-                <strong>Himal Thapa</strong> — Computer Engineering student at{' '}
-                <span className="text-accent">Lovely Professional University</span>, building software for the real world.
-            </p>
-            <p>
-                I work across the full engineering spectrum: from writing clean application code to architecting{' '}
-                <span className="text-secondary">cloud infrastructure</span>, designing CI/CD pipelines, and thinking
-                through system design at scale. My interests sit at the intersection of software engineering,
-                DevOps, and distributed systems.
-            </p>
-            <p>
-                Outside of coursework, I ship side projects, contribute to open source, and explore topics like
-                cloud cost optimization, container orchestration, and database internals. I care deeply about
-                writing software that is reliable, maintainable, and built to last.
+            <p className="about-intro">
+                CSE student at <span className="text-accent">LPU</span>. I build software, ship cloud infrastructure, and think in systems.
             </p>
 
-            <div className="about-tags">
-                {['LPU · CSE', 'Software Engineer', 'Cloud Architect', 'DevOps', 'System Design', 'Open Source'].map(t => (
-                    <span key={t} className="tag">{t}</span>
+            <div className="about-area-grid">
+                {areas.map((a, i) => (
+                    <motion.div
+                        key={a.title}
+                        className="about-area-card glass-card"
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.07 }}
+                        whileHover={{ y: -4 }}
+                    >
+                        <span className="area-icon">{a.icon}</span>
+                        <span className="area-title">{a.title}</span>
+                        <span className="area-items">{a.items}</span>
+                    </motion.div>
                 ))}
             </div>
 
             <div className="stat-grid">
                 {[
-                    { val: '3+', label: 'Years of building' },
+                    { val: '3+', label: 'Years building' },
                     { val: '20+', label: 'Projects shipped' },
-                    { val: '∞', label: 'Curiosity' },
+                    { val: '∞', label: 'Things to learn' },
                 ].map(s => (
                     <div key={s.val} className="stat-box">
                         <span className="stat-val gradient-text">{s.val}</span>

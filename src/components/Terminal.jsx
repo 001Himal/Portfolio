@@ -5,20 +5,42 @@ import { FaTerminal, FaTimes } from 'react-icons/fa';
 
 const COMMANDS = {
     whoami: `Himal Thapa
-DevOps learner & builder
-LPU CSE student | himalthapa.tech`,
+Software Engineer · Cloud Architect · DevOps
+Currently @ LPU · Building things online since 2022`,
     help: `Available commands:
-  whoami     — who is this?
-  skills     — tech stack
-  contact    — get in touch
-  clear      — clear terminal
-  exit       — close terminal`,
-    skills: `[ DevOps, Cloud, Docker, AWS, Linux ]
-[ React, Next.js, Python, PostgreSQL ]
-[ System Design, Security, CI/CD ]`,
+  whoami      — who is this?
+  skills      — tech stack
+  projects    — what I've built
+  status      — what I'm working on
+  interests   — things I enjoy
+  contact     — get in touch
+  clear       — clear terminal
+  exit        — close terminal`,
+    skills: `Languages  → Python · JavaScript · C · HTML · CSS
+Frontend   → React · Next.js
+Backend    → Node.js · PostgreSQL
+DevOps     → Docker · CI/CD · Linux · Git
+Cloud      → AWS · Cloudflare · Supabase
+Other      → System Design · DBMS`,
+    projects: `[1] ToolHub           → himalthapa.tech
+     Multi-tool platform · React · Next.js · PostgreSQL
+
+[2] Today in History  → github.com/001Himal
+     Educational web app · React · REST API
+
+[3] Cricket Auction   → github.com/001Himal
+     Real-time multiplayer · Node.js · Socket.IO`,
+    status: `Currently building: ToolHub
+Last deployed: Mar 2025
+Current focus: Cloud architecture + DevOps pipelines`,
+    interests: `Things I enjoy outside code:
+  Cricket (always watching, sometimes playing)
+  Experimenting with new tools
+  Reading about distributed systems
+  Coffee · chai · whatever keeps me awake`,
     contact: `Email    → contact@himalthapa.tech
-GitHub   → github.com/himal-thapa
-LinkedIn → linkedin.com/in/himal-thapa`,
+GitHub   → github.com/001Himal
+Site     → himalthapa.tech`,
 };
 
 const Terminal = () => {

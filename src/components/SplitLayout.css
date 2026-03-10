@@ -188,6 +188,25 @@
     box-shadow: 0 0 8px var(--accent);
 }
 
+/* Currently building */
+.currently-building {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.building-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FEBC2E;
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
 /* Socials */
 .left-socials {
     display: flex;
