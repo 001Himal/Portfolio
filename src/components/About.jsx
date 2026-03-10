@@ -36,8 +36,9 @@ const About = () => (
 
         <div className="about-body">
             <p className="about-intro">
-                CSE student at <span className="text-accent">LPU</span>. I build software, ship cloud infrastructure, and think in systems.
+                Software Engineer focused on <span className="text-accent">cloud infrastructure</span>, developer tooling, and systems that scale.
             </p>
+            <p className="about-edu">Computer Engineering · Lovely Professional University</p>
 
             <div className="about-area-grid">
                 {areas.map((a, i) => (

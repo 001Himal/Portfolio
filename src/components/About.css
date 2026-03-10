@@ -42,6 +42,13 @@
     max-width: 420px;
 }
 
+.about-edu {
+    font-size: 0.78rem;
+    color: rgba(139, 154, 187, 0.55);
+    letter-spacing: 0.02em;
+    margin-top: -1rem;
+}
+
 .about-intro strong {
     color: var(--text);
     font-weight: 600;
